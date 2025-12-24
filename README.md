@@ -1,0 +1,1 @@
+This is a mini project of mine inspired by geogridgame.com. You must choose a country that fufilles the categories of each column and row and fill up the 3x3 board. Tests your geography skills harshly.
