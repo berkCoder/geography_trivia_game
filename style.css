@@ -1,0 +1,282 @@
+#gamecontainer {
+    display: flex;
+    grid-template-columns: auto auto auto;
+    background-color: rgb(45, 54, 64);
+    padding: 10px;
+    height: 800px;
+    width: 800px;
+    padding: 0;
+    margin: auto;
+    margin-top: 5px;
+    align-self: center;
+    justify-content: center;
+    border: 3px solid black;
+}   
+#squares {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    width: 700px;
+    height: 700px;
+    align-content: start;
+    justify-content: start;
+}
+
+#title {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color:rgb(60, 61, 73);  
+    height: 50px;
+    padding: 0;
+    margin: auto;
+    margin-right: 0;
+    margin-top: 10px;
+    text-align: center;
+    align-items: center;   
+    width: 500px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:rgb(80, 82, 112);  
+}
+
+.option {
+    width: 175px;
+    height: 175px;
+    aspect-ratio: 1 / 1; 
+    margin: 0;    
+    background-color: rgb(47, 47, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+#start_button {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(50, 50, 58);
+    color: white;
+    border-radius: 5px;
+    border: 3px solid black;
+    margin: 0; 
+    margin-top: 10px;
+    font-size: 1.5rem;
+    margin-right: 500px;
+    margin-left: 50px;
+    padding: 0;
+}
+
+#start_button:hover {
+    transition: ease-in 90ms;
+    background-color: rgb(74, 74, 94);
+    cursor: pointer;
+}
+
+#start_button:active {
+    transition: ease-in 90ms;
+    background-color: rgb(110, 110, 134);
+    cursor: pointer;
+}
+
+#headers{
+    display: flex;         
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.option:hover {
+    transition: ease-in 90ms;
+    background-color: rgb(74, 74, 94);
+    cursor: pointer;
+}
+
+.option.active-square {
+    outline: 3px solid rgb(106, 197, 255);
+    outline-offset: -3px;
+}
+
+.option.success {
+    background-color: rgb(64, 122, 85);
+}
+
+.flash-red {
+    animation: flash 0.6s ease;
+}
+
+.filled {
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.option:selected {
+    transition: ease-in 90ms;
+    background-color: rgb(119, 119, 138);
+}
+
+#topic4, #topic5, #topic6 {
+    width: 125px;
+    height: 175px;
+    aspect-ratio: 1 / 1; 
+    margin: 0;    
+    padding: 0;
+    border: 1px solid rgb(19, 19, 19);
+    background-color: rgb(47, 47, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#topic1, #topic2, #topic3 {
+    width: 175px;
+    height: 125px;
+    aspect-ratio: 1 / 1; 
+    margin: 0;   
+    margin-top: 40px; 
+    padding: 0;
+    border: 1px solid rgb(19, 19, 19);
+    background-color: rgb(47, 47, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#blank {
+    background-color: rgb(45, 54, 64);
+    border: 0px transparent rgb(19, 19, 19);
+}
+
+#controls {
+    max-width: 720px;
+    margin: 18px auto 0;
+    padding: 12px;
+    background: rgb(47, 47, 60);
+    border: 2px solid black;
+    border-radius: 8px;
+    color: white;
+    display: none;
+}
+
+#status {
+    margin: 0 0 8px 0;
+    color: #d4d7e4;
+}
+
+@keyframes flash {
+    0% { box-shadow: 0 0 0 0 rgba(255, 73, 73, 0.8); }
+    50% { box-shadow: 0 0 12px 8px rgba(255, 73, 73, 0.6); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 73, 73, 0); }
+}
+
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#overlay.hidden {
+    display: none;
+}
+
+#search-panel {
+    background: rgb(47, 47, 60);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 16px;
+    min-width: 320px;
+    max-width: 520px;
+    color: white;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+#overlay-instructions {
+    margin: 0 0 10px 0;
+    color: #d4d7e4;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#country-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid rgb(32, 32, 43);
+    background: rgb(60, 61, 73);
+    color: white;
+}
+
+#submit-btn, #close-overlay {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 2px solid black;
+    background: rgb(50, 50, 58);
+    color: white;
+    cursor: pointer;
+}
+
+#submit-btn:hover, #close-overlay:hover {
+    background: rgb(74, 74, 94);
+}
+
+#country-suggestions {
+    margin-top: 8px;
+    max-height: 180px;
+    overflow-y: auto;
+    background: rgb(60, 61, 73);
+    border: 1px solid rgb(32, 32, 43);
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.suggestion {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background: rgb(74, 74, 94);
+}
+
+#notice {
+    position: fixed;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -100%);
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    border-radius: 8px;
+    border: 2px solid black;
+    z-index: 25;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+#notice.hidden {
+    display: none;
+}
